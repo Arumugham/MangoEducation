@@ -1,64 +1,31 @@
 'use strict';
 
-angular.module('mangoLearning')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      {
-        'title': 'AngularJS',
-        'url': 'https://angularjs.org/',
-        'description': 'HTML enhanced for web apps!',
-        'logo': 'angular.png'
-      },
-      {
-        'title': 'BrowserSync',
-        'url': 'http://browsersync.io/',
-        'description': 'Time-saving synchronised browser testing.',
-        'logo': 'browsersync.png'
-      },
-      {
-        'title': 'GulpJS',
-        'url': 'http://gulpjs.com/',
-        'description': 'The streaming build system.',
-        'logo': 'gulp.png'
-      },
-      {
-        'title': 'Jasmine',
-        'url': 'http://jasmine.github.io/',
-        'description': 'Behavior-Driven JavaScript.',
-        'logo': 'jasmine.png'
-      },
-      {
-        'title': 'Karma',
-        'url': 'http://karma-runner.github.io/',
-        'description': 'Spectacular Test Runner for JavaScript.',
-        'logo': 'karma.png'
-      },
-      {
-        'title': 'Protractor',
-        'url': 'https://github.com/angular/protractor',
-        'description': 'End to end test framework for AngularJS applications built on top of WebDriverJS.',
-        'logo': 'protractor.png'
-      },
-      {
-        'title': 'Bootstrap',
-        'url': 'http://getbootstrap.com/',
-        'description': 'Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.',
-        'logo': 'bootstrap.png'
-      },
-      {
-        'title': 'Angular UI Bootstrap',
-        'url': 'http://angular-ui.github.io/bootstrap/',
-        'description': 'Bootstrap components written in pure AngularJS by the AngularUI Team.',
-        'logo': 'ui-bootstrap.png'
-      },
-      {
-        'title': 'Sass (Node)',
-        'url': 'https://github.com/sass/node-sass',
-        'description': 'Node.js binding to libsass, the C version of the popular stylesheet preprocessor, Sass.',
-        'logo': 'node-sass.png'
-      }
-    ];
-    angular.forEach($scope.awesomeThings, function(awesomeThing) {
-      awesomeThing.rank = Math.random();
-    });
+var app = angular.module('mangoLearning');
+
+
+app.controller('mangoCtrl', function($scope) {
+    $scope.sections = ['app/main/landing','app/main/about','app/main/mangocamp','app/main/blog','app/main/contact']; //html files to load (top.html, etc)
+    $scope.loadedSections = [$scope.sections[0]]; //loaded html files
   });
+app.directive('scrollLoad', function($compile) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs,$window) {
+      var to = scope[attrs.scrollLoadTo]; //$scope.loadedSections
+      var from = scope[attrs.scrollLoadFrom]; //$scope.sections
+
+      $window = angular.element(window);
+      $window.bind('scroll', function(event) {
+        var scrollPos = document.body.scrollTop + document.documentElement.clientHeight;
+        var elemBottom = element[0].offsetTop + element.height();
+        if (scrollPos >= elemBottom) { //scrolled to bottom of scrollLoad element
+          $window.unbind(event); //this listener is no longer needed.
+          if (to.length < from.length) { //if there are still elements to load
+            //use $apply because we're in the window event context
+            scope.$apply(to.push(from[to.length])); //add next section
+          }
+        }
+      });
+    }
+  };
+});

@@ -6,7 +6,7 @@ angular.module('mangoLearning', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitiz
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'mangoCtrl'
       });
 
     $urlRouterProvider.otherwise('/');
