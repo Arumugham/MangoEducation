@@ -17,7 +17,10 @@ $box-color-3: #FFBC3F;
 $element-zindex: 1000;
 
 body {
-
+    font-family: 'Montserrat', sans-serif;
+}
+footer, .footer {
+    float: right;
 }
 /* BOOTSTRAP OVERRIDES */
 .mango-nav.navbar {
@@ -275,6 +278,23 @@ section {
                 font-size: 35px;
                 padding: 5px;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .mango-boxes-right {
+        .green-box {
+            width: 560px;
+            height: 280px;
+            right: 100px;
+            top: -240px;
+        }
+        .yellow-box {
+            width: 300px;
+            height: 300px;
+            right: -169px;
+            top: -90px;
         }
     }
 }
