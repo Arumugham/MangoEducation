@@ -11,7 +11,8 @@ Author: http://abi.ink
 $icon-font-path: '../fonts/';
 
 // bower:scss
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "owl.carousel.css";
+
 // endbower
 
 // Variables
@@ -28,6 +29,9 @@ $color-black: #000;
 //Overwriting Bootstrap Variables
 $headings-font-family: 'Montserrat', sans-serif;
 $font-family-sans-serif: 'Roboto', sans-serif;
+$link-color: #898989;
+$link-hover-color: #606060;
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 body {
   overflow: hidden;
@@ -35,9 +39,7 @@ body {
 .mango-container {
   margin-top: 150px;
 }
-footer, .footer {
 
-}
 /* BOOTSTRAP OVERRIDES */
 .mango-nav.navbar {
   margin-top: 20px;
@@ -58,14 +60,14 @@ li.active >a {
   position: relative;
 }
 .mango-logo {
-  width: 150px;
-  height: 180px;
-  background: url('../assets/images/mango-logo.png') no-repeat; /* Replace the Logo with the right exported size */
-  background-size: 100%; /* Bad Practice */
-  position: fixed;
-  z-index: $element-zindex;
-  top: 25px;
+  width: 180px;
+  position: absolute;
   left: 50px;
+  top: 27px;
+  z-index: $element-zindex;
+  img {
+    width: 100%;
+  }
 }
 .green-box {
     background-color: $box-color-1;
@@ -86,8 +88,9 @@ li.active >a {
   right: -80px;
   width: 500px;
   height: 320px;
+  z-index: $element-zindex;
   .brand {
-    margin-top: 30px;
+    margin-top: 48px;
     margin-left: 60px;
     color: $color-white;
     h1 {
@@ -95,7 +98,7 @@ li.active >a {
     }
     a {
       color: $color-white;
-      &:hover {
+      &:hover, &:active {
         text-decoration: none;
       }
     }
@@ -112,8 +115,6 @@ li.active >a {
   }
 }
 
-
-
 .mango-boxes-left {
   background-image: url(../images/boxes-2.png);
   background-position: 0;
@@ -124,6 +125,7 @@ li.active >a {
   left: -20px;
   width: 300px;
   height: 300px;
+  z-index: $element-zindex;
   p.gift {
     color: $color-black;
     text-align: left;
@@ -143,14 +145,8 @@ li.active >a {
     left: 50px;
     line-height: 18px;
   }
-
-
 }
 
-section#main {
-  background: url('../assets/images/mangobox.jpg');
-  background-size: 88%; /* Bad Practice */
-}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -158,106 +154,23 @@ section#main {
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
 
-  img.pull-right {
-    width: 50px;
-  }
-}
-
-.section-list{
-    margin-top:150px;
-}
-section {
-  display: block;
-  height: 600px;
-  margin: 50px 25px;
-  position: relative;
-}
-
-.section-animate-enter {
-  -webkit-transition: 1.5s linear all; /* Chrome */
-    transition: 1.5s linear all;
-    opacity: 0;
-    left: 100%;
-}
-.section-animate-enter.section-animate-enter-active {
-    opacity: 1;
-    left: 0;
-}
 
 //Media Queries
 
 @media screen and (max-width: 320px) {
-    .mango-boxes-right {
-        .green-box {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            -webkit-transform: rotate(20deg);
-               -moz-transform: rotate(20deg);
-                -ms-transform: rotate(20deg);
-                 -o-transform: rotate(20deg);
-                    transform: rotate(20deg);
-            right: 100px;
-            top: -150px;
-            .brand {
-                margin-top: 175px;
-                margin-left: 25px;
-                color: #fff;
-                -webkit-transform: rotate(-20deg);
-                   -moz-transform: rotate(-20deg);
-                    -ms-transform: rotate(-20deg);
-                     -o-transform: rotate(-20deg);
-                        transform: rotate(-20deg);
-                h1 {
-                    font-size: 25px
-                }
-            }
-        }
-        .yellow-box {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            -webkit-transform: rotate(20deg);
-               -moz-transform: rotate(20deg);
-                -ms-transform: rotate(20deg);
-                 -o-transform: rotate(20deg);
-                    transform: rotate(20deg);
-            right: -214px;
-            top: -20px;
-            .text-box {
-                position: absolute;
-                bottom: 30px;
-                left: 20px;
-                -webkit-transform: rotate(-20deg);
-                   -moz-transform: rotate(-20deg);
-                    -ms-transform: rotate(-20deg);
-                     -o-transform: rotate(-20deg);
-                        transform: rotate(-20deg);
-            }
-            i {
-                font-size: 35px;
-                padding: 5px;
-            }
-        }
-    }
 }
 
 @media screen and (max-width: 990px) {
-    .mango-boxes-right {
-        .green-box {
-            width: 560px;
-            height: 280px;
-            right: 100px;
-            top: -240px;
-        }
-        .yellow-box {
-            width: 300px;
-            height: 300px;
-            right: -169px;
-            top: -90px;
-        }
+
+}
+// Lol Shameless Marketing.
+footer, .footer {
+  .abi {
+    &, a {
+      color: $gray-lighter;
+      font-size: 8px;
+      text-align: right
     }
+  }
 }
