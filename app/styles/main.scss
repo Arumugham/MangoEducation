@@ -1,93 +1,299 @@
+/*
+Project: Mango Education
+Build Version: 0.0.1
+Author: http://abi.ink
+   _   _     _
+  /_\ | |__ (_)
+ // \\| '_ \| |
+// _ \\ |_) | |
+\_/ \_/_.__/|_|
+*/
 $icon-font-path: '../fonts/';
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-.browserupgrade {
+// Variables
+$box-color-1: #A0C34F;
+$box-color-2: #3D3D3D;
+$box-color-3: #FFBC3F;
+$element-zindex: 1000;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+footer, .footer {
+    float: right;
+}
+/* BOOTSTRAP OVERRIDES */
+.mango-nav.navbar {
+  margin-top: 20px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+  text-decoration: underline;
+  outline: none;
+}
+.nav > li > a {
+  color: #606060;
+}
+li.active >a {
+  font-weight: bold;
+}
+.mango-relative {
+  position: relative;
+}
+.mango-logo {
+  width: 150px;
+  height: 180px;
+  background: url('../assets/images/mango-logo.png') no-repeat; /* Replace the Logo with the right exported size */
+  background-size: 100%; /* Bad Practice */
+  position: fixed;
+  z-index: $element-zindex;
+  top: 25px;
+  left: 50px;
+}
+.green-box {
+    background-color: $box-color-1;
+}
+.black-box {
+    background-color: $box-color-2;
+}
+.yellow-box {
+    background-color: $box-color-3;
+}
+.mango-boxes-right {
+    position: fixed;
+    right:0;
+    z-index: $element-zindex;
+    .green-box {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      -webkit-transform: rotate(20deg);
+         -moz-transform: rotate(20deg);
+          -ms-transform: rotate(20deg);
+           -o-transform: rotate(20deg);
+              transform: rotate(20deg);
+      right: 100px;
+      top: -150px;
+      .brand {
+        margin-top: 175px;
+        margin-left: 25px;
+        color: #fff;
+        -webkit-transform: rotate(-20deg);
+           -moz-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
+             -o-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+        h1 {
+          font-size: 25px
+        }
+      }
+    }
+    .yellow-box {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      -webkit-transform: rotate(20deg);
+         -moz-transform: rotate(20deg);
+          -ms-transform: rotate(20deg);
+           -o-transform: rotate(20deg);
+              transform: rotate(20deg);
+      right: -214px;
+      top: -20px;
+      .text-box {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        -webkit-transform: rotate(-20deg);
+           -moz-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
+             -o-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+      }
+      i {
+        font-size: 35px;
+        padding: 5px;
+      }
+    }
+  }
+  .mango-boxes-left {
+    position: fixed;
+    bottom: 0;
+    z-index: $element-zindex;
+    .green-box {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+      left: -150px;
+      bottom: 100px;
+      .text-box {
+        position: absolute;
+        bottom: 190px;
+        right: -160px;
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        p {
+          color: #000;
+          text-align: right;
+          font-size: 22px;
+        }
+      }
+    }
+    .black-box {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+      left: -175px;
+      bottom: -175px;
+      .text-box {
+        position: absolute;
+        top: 25px;
+        left: 125px;
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        p {
+          color: #fff;
+          text-align: right;
+          font-size: 22px;
+        }
+      }
+      i {
+        font-size: 35px;
+        padding: 5px;
+      }
+    }
+  }
+
+section#main {
+  background: url('../assets/images/mangobox.jpg');
+  background-size: 88%; /* Bad Practice */
+}
+.browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+.thumbnail {
+  height: 200px;
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+  img.pull-right {
+    width: 50px;
   }
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.section-list{
+    margin-top:150px;
+}
+section {
+  display: block;
+  height: 600px;
+  margin: 50px 25px;
+  position: relative;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.section-animate-enter {
+  -webkit-transition: 1.5s linear all; /* Chrome */
+    transition: 1.5s linear all;
+    opacity: 0;
+    left: 100%;
+}
+.section-animate-enter.section-animate-enter-active {
+    opacity: 1;
+    left: 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+//Media Queries
+
+@media screen and (max-width: 320px) {
+    .mango-boxes-right {
+        .green-box {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            -webkit-transform: rotate(20deg);
+               -moz-transform: rotate(20deg);
+                -ms-transform: rotate(20deg);
+                 -o-transform: rotate(20deg);
+                    transform: rotate(20deg);
+            right: 100px;
+            top: -150px;
+            .brand {
+                margin-top: 175px;
+                margin-left: 25px;
+                color: #fff;
+                -webkit-transform: rotate(-20deg);
+                   -moz-transform: rotate(-20deg);
+                    -ms-transform: rotate(-20deg);
+                     -o-transform: rotate(-20deg);
+                        transform: rotate(-20deg);
+                h1 {
+                    font-size: 25px
+                }
+            }
+        }
+        .yellow-box {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            -webkit-transform: rotate(20deg);
+               -moz-transform: rotate(20deg);
+                -ms-transform: rotate(20deg);
+                 -o-transform: rotate(20deg);
+                    transform: rotate(20deg);
+            right: -214px;
+            top: -20px;
+            .text-box {
+                position: absolute;
+                bottom: 30px;
+                left: 20px;
+                -webkit-transform: rotate(-20deg);
+                   -moz-transform: rotate(-20deg);
+                    -ms-transform: rotate(-20deg);
+                     -o-transform: rotate(-20deg);
+                        transform: rotate(-20deg);
+            }
+            i {
+                font-size: 35px;
+                padding: 5px;
+            }
+        }
+    }
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+@media screen and (max-width: 990px) {
+    .mango-boxes-right {
+        .green-box {
+            width: 560px;
+            height: 280px;
+            right: 100px;
+            top: -240px;
+        }
+        .yellow-box {
+            width: 300px;
+            height: 300px;
+            right: -169px;
+            top: -90px;
+        }
+    }
 }
