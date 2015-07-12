@@ -20,11 +20,23 @@ $box-color-2: #3D3D3D;
 $box-color-3: #FFBC3F;
 $element-zindex: 1000;
 
+//Color Variables
+$color-white: #FFF;
+$color-nav-text: #606060;
+$color-black: #000;
+
+//Overwriting Bootstrap Variables
+$headings-font-family: 'Montserrat', sans-serif;
+$font-family-sans-serif: 'Roboto', sans-serif;
+
 body {
-    font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+.mango-container {
+  margin-top: 150px;
 }
 footer, .footer {
-    float: right;
+
 }
 /* BOOTSTRAP OVERRIDES */
 .mango-nav.navbar {
@@ -36,7 +48,8 @@ footer, .footer {
   outline: none;
 }
 .nav > li > a {
-  color: #606060;
+  color: $color-nav-text;
+  font-family: $headings-font-family;
 }
 li.active >a {
   font-weight: bold;
@@ -64,124 +77,75 @@ li.active >a {
     background-color: $box-color-3;
 }
 .mango-boxes-right {
-    position: fixed;
-    right:0;
-    z-index: $element-zindex;
-    .green-box {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      -webkit-transform: rotate(20deg);
-         -moz-transform: rotate(20deg);
-          -ms-transform: rotate(20deg);
-           -o-transform: rotate(20deg);
-              transform: rotate(20deg);
-      right: 100px;
-      top: -150px;
-      .brand {
-        margin-top: 175px;
-        margin-left: 25px;
-        color: #fff;
-        -webkit-transform: rotate(-20deg);
-           -moz-transform: rotate(-20deg);
-            -ms-transform: rotate(-20deg);
-             -o-transform: rotate(-20deg);
-                transform: rotate(-20deg);
-        h1 {
-          font-size: 25px
-        }
+  background-image: url(../images/boxes-1.png);
+  background-position: 0;
+  background-size: 85%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -20px;
+  right: -80px;
+  width: 500px;
+  height: 320px;
+  .brand {
+    margin-top: 30px;
+    margin-left: 60px;
+    color: $color-white;
+    h1 {
+      font-size: 25px
+    }
+    a {
+      color: $color-white;
+      &:hover {
+        text-decoration: none;
       }
     }
-    .yellow-box {
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      -webkit-transform: rotate(20deg);
-         -moz-transform: rotate(20deg);
-          -ms-transform: rotate(20deg);
-           -o-transform: rotate(20deg);
-              transform: rotate(20deg);
-      right: -214px;
-      top: -20px;
-      .text-box {
-        position: absolute;
-        bottom: 30px;
-        left: 20px;
-        -webkit-transform: rotate(-20deg);
-           -moz-transform: rotate(-20deg);
-            -ms-transform: rotate(-20deg);
-             -o-transform: rotate(-20deg);
-                transform: rotate(-20deg);
-      }
-      i {
-        font-size: 35px;
-        padding: 5px;
-      }
+
+  }
+  .social-box {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    i {
+      font-size: 35px;
+      padding: 5px;
     }
   }
-  .mango-boxes-left {
-    position: fixed;
-    bottom: 0;
-    z-index: $element-zindex;
-    .green-box {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      -webkit-transform: rotate(45deg);
-         -moz-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-           -o-transform: rotate(45deg);
-              transform: rotate(45deg);
-      left: -150px;
-      bottom: 100px;
-      .text-box {
-        position: absolute;
-        bottom: 190px;
-        right: -160px;
-        -webkit-transform: rotate(-45deg);
-           -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-             -o-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-        p {
-          color: #000;
-          text-align: right;
-          font-size: 22px;
-        }
-      }
-    }
-    .black-box {
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      -webkit-transform: rotate(45deg);
-         -moz-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-           -o-transform: rotate(45deg);
-              transform: rotate(45deg);
-      left: -175px;
-      bottom: -175px;
-      .text-box {
-        position: absolute;
-        top: 25px;
-        left: 125px;
-        -webkit-transform: rotate(-45deg);
-           -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-             -o-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-        p {
-          color: #fff;
-          text-align: right;
-          font-size: 22px;
-        }
-      }
-      i {
-        font-size: 35px;
-        padding: 5px;
-      }
-    }
+}
+
+
+
+.mango-boxes-left {
+  background-image: url(../images/boxes-2.png);
+  background-position: 0;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: 300px;
+  height: 300px;
+  p.gift {
+    color: $color-black;
+    text-align: left;
+    font-size: 18px;
+    position: absolute;
+    left: 140px;
+    top: 135px;
+    line-height: 18px;
   }
+
+  p.subscription {
+    color: $color-white;
+    text-align: right;
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    line-height: 18px;
+  }
+
+
+}
 
 section#main {
   background: url('../assets/images/mangobox.jpg');

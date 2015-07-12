@@ -16,7 +16,7 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat|Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
@@ -31,7 +31,7 @@
 
     <div class="container-fluid">
       <header>
-        <nav class="mango-nav navbar col-lg-6 col-lg-offset-3 navbar-fixed-top">
+        <nav class="mango-nav navbar navbar-fixed-top col-lg-6 col-lg-offset-3">
           <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mango-nav" aria-expanded="false">
@@ -43,60 +43,32 @@
             </div>
             <div class="collapse navbar-collapse" id="mango-nav">
               <ul class="nav navbar-nav">
-                <li><a ng-href="#">ABOUT</a></li>
-                <li class="active"><a ng-href="#">MANGOBOX</a></li>
-                <li><a ng-href="#">MANGOCAMP</a></li>
-                <li><a ng-href="#">BLOG</a></li>
-                <li><a ng-href="#">CONTACT</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li class="active"><a href="#">MANGOBOX</a></li>
+                <li><a href="#">MANGOCAMP</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT</a></li>
               </ul>
             </div>
           </div>
         </nav>
-      </header>
-
-      <!-- The absolute positioned elements -->
-      <div class="mango-relative">
         <!--Logo-->
         <div class="mango-logo">
         </div>
-        <!--Left Boxes -->
-        <div class="mango-boxes-left">
-          <div class="green-box">
-            <div class="text-box">
-              <p>
-                <b>Gift</b><br/>
-                a <b>MangoBox</b><br/>
-                Today
-              </p>
-            </div>
-          </div>
-          <div class="black-box">
-            <div class="text-box">
-              <p>
-                Subscribe <br/> to our <br/> <a href="#"><b>Newsletter</b>!</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <!--Right Boxes -->
         <div class="mango-boxes-right">
-          <div class="yellow-box">
-            <div class="text-box">
-          <!-- Used Font Awesome Icons -->
-              <i class="fa fa-facebook-square"></i>
-              <i class="fa fa-pinterest"></i>
-              <i class="fa fa-youtube-square"></i>
-            </div>
+          <div class="brand">
+            <h1><a href="#">www.themango.co</a></h1>
           </div>
-          <div class="green-box">n
-            <div class="brand">
-              <h1>www.themango.co</h1>
-            </div>
+          <div class="social-box">
+        <!-- Used Font Awesome Icons -->
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-pinterest"></i>
+            <i class="fa fa-youtube-square"></i>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div class="container">
+      <div id="main" class="container mango-container">
         <div class="row">
           <div class="col-md-6 col-md-offset-2">
             <h1>Landing Section</h1>
@@ -114,8 +86,21 @@
       </div>
 
       <footer class="footer">
-        <p><a href="#">© MANGO EDUCATION, 2015</a></p>
-        <p>With ♥ <a href="http://abi.ink">Λbi</a></p>
+        <!--Left Boxes -->
+        <div class="mango-boxes-left">
+          <p class="gift">
+            <b>Gift</b><br/>
+            a <b>MangoBox</b><br/>
+            Today
+          </p>
+          <p class="subscription">
+            Subscribe <br/> to our <br/> <a href="#"><b>Newsletter</b>!</a>
+          </p>
+        </div>
+        <div class="pull-right">
+          <p><a href="#">© MANGO EDUCATION, 2015</a></p>
+          <p class="tiny">With ♥ <a href="http://abi.ink">Λbi</a></p>
+        </div>
       </footer>
     </div>
 
@@ -158,9 +143,9 @@
         var d= document, root= d.documentElement, body= d.body;
         var wid= window.innerWidth || root.clientWidth || body.clientWidth,
             hi= window.innerHeight || root.clientHeight || body.clientHeight;
-        var container = document.getElementById('mango-container');
+        var container = document.getElementById('main');
             container.style.width = wid +'px';
-            container.style.height = hi + 'px';
+            container.style.height = hi-220 + 'px';
         return [wid,hi]
       }
       window.onresize = function(){
