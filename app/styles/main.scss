@@ -1,0 +1,214 @@
+/*
+Project: Mango Education
+Build Version: 0.0.1
+Author: http://abi.ink
+   _   _     _
+  /_\ | |__ (_)
+ // \\| '_ \| |
+// _ \\ |_) | |
+\_/ \_/_.__/|_|
+*/
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "owl.carousel.css";
+
+// endbower
+
+// Variables
+$box-color-1: #A0C34F;
+$box-color-2: #3D3D3D;
+$box-color-3: #FFBC3F;
+$element-zindex: 1000;
+
+//Color Variables
+$color-white: #FFF;
+$color-nav-text: #606060;
+$color-black: #000;
+
+//Overwriting Bootstrap Variables
+$headings-font-family: 'Montserrat', sans-serif;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$link-color: #898989;
+$link-hover-color: #606060;
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+body {
+  overflow: hidden;
+}
+.mango-container {
+  margin-top: 150px;
+}
+
+/* BOOTSTRAP OVERRIDES */
+.mango-nav.navbar {
+  margin-top: 20px;
+  z-index: $element-zindex + 100;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+  text-decoration: underline;
+  outline: none;
+}
+.nav > li > a {
+  color: $color-nav-text;
+  font-family: $headings-font-family;
+}
+li.active >a {
+  font-weight: bold;
+}
+.navbar-header {
+  margin-top: -6px;
+  .navbar-toggle {
+    margin-right: 2px;
+    border-color: $color-nav-text;
+    .icon-bar {
+      background-color: $color-nav-text;
+    }
+  }
+}
+.mango-relative {
+  position: relative;
+}
+.mango-logo {
+  width: 180px;
+  position: absolute;
+  left: 50px;
+  top: 27px;
+  z-index: $element-zindex;
+  img {
+    width: 100%;
+  }
+}
+.green-box {
+    background-color: $box-color-1;
+}
+.black-box {
+    background-color: $box-color-2;
+}
+.yellow-box {
+    background-color: $box-color-3;
+}
+.mango-boxes-right {
+  background-image: url(../images/boxes-1.png);
+  background-position: 0;
+  background-size: 85%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -20px;
+  right: -80px;
+  width: 500px;
+  height: 320px;
+  z-index: $element-zindex;
+  .brand {
+    margin-top: 48px;
+    margin-left: 60px;
+    color: $color-white;
+    h1 {
+      font-size: 25px
+    }
+    a {
+      color: $color-white;
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+
+  }
+  .social-box {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    i {
+      font-size: 35px;
+      padding: 5px;
+    }
+  }
+}
+
+.mango-boxes-left {
+  background-image: url(../images/boxes-2.png);
+  background-position: 0;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: 0;
+  left: -20px;
+  width: 300px;
+  height: 300px;
+  z-index: $element-zindex;
+  p.gift {
+    color: $color-black;
+    text-align: left;
+    font-size: 18px;
+    position: absolute;
+    left: 140px;
+    top: 135px;
+    line-height: 18px;
+  }
+
+  p.subscription {
+    color: $color-white;
+    text-align: right;
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    line-height: 18px;
+  }
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+
+//Media Queries
+
+@media screen and (max-width: 320px) {
+}
+
+@media (max-width: 728px) {
+  body {
+    overflow: visible;
+  }
+  .navbar-nav {
+    background-color: $box-color-3;
+  }
+  .nav > li {
+    text-align: center;
+    > a{
+      font-size: 28px;
+      padding-top: 45px;
+      padding-bottom: 45px;
+    }
+  }
+  .navbar-header {
+    .navbar-toggle {
+      z-index: $element-zindex + 200;
+    }
+  }
+  .navbar-collapse {
+    position: relative;
+    margin-left: -45px !important;
+    margin-right: -45px !important;
+    top: -75px;
+  }
+  .mango-container {
+    margin-bottom: 300px;
+  }
+}
+// Lol Shameless Marketing.
+footer, .footer {
+  .abi {
+    &, a {
+      color: $gray-lighter;
+      font-size: 8px;
+      text-align: right
+    }
+  }
+}
